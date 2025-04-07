@@ -117,11 +117,11 @@ class PDFProcessorApp:
                 # Create a temporary PDF with the voucher number annotation
                 buffer = BytesIO()
                 c = canvas.Canvas(buffer, pagesize=(page_width, page_height))  # Match the page size
-                c.setFont("Helvetica-Bold", 12)
+                c.setFont("Helvetica-Bold", 10)
                 # Add the voucher number in the top-left corner
                 # Position: 50 points from left, 50 points from top
-                x_position = 50
-                y_position = page_height - 50  # Top of the page
+                x_position = 10
+                y_position = page_height - 10  # Top of the page
                 if voucher_num and voucher_num.strip():  # Check if voucher_num is not empty
                     # Draw the text
                     text = f"Voucher Num: {voucher_num}"
@@ -132,7 +132,7 @@ class PDFProcessorApp:
                     text_width = c.stringWidth(text, "Helvetica-Bold", 12)
                     # Draw a black border around the text
                     c.setStrokeColorRGB(0, 0, 0)  # Black border
-                    c.rect(x_position - 1, y_position - 1, text_width + 10, 20, fill=0)  # Border only, no fill
+                    c.rect(x_position - 1, y_position - 1, text_width + 20, 20, fill=0)  # Border only, no fill
                     print(f"Added annotation '{text}' at ({x_position}, {y_position})")
                 else:
                     print(f"No voucher number provided for {row['File Name']}")
