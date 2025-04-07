@@ -132,7 +132,7 @@ class PDFProcessorApp:
                     text_width = c.stringWidth(text, "Helvetica-Bold", 12)
                     # Draw a black border around the text
                     c.setStrokeColorRGB(0, 0, 0)  # Black border
-                    c.rect(x_position - 5, y_position - 5, text_width + 10, 20, fill=0)  # Border only, no fill
+                    c.rect(x_position - 1, y_position - 1, text_width + 10, 20, fill=0)  # Border only, no fill
                     print(f"Added annotation '{text}' at ({x_position}, {y_position})")
                 else:
                     print(f"No voucher number provided for {row['File Name']}")
